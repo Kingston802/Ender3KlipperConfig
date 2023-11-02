@@ -1,0 +1,137 @@
+2023-11-02 21:58:00,260      INFO  obico.printer_discovery - printer_discovery started, device_id: 5419281ea16946aca18c737591e953f3
+2023-11-02 21:58:39,476      INFO  obico.app - Fetching linked printer...
+2023-11-02 21:58:39,884      INFO  obico.app - Linked printer: {'is_pro': True, 'id': 157624, 'name': 'My Awesome Cloud Printer', 'retract_on_pause': 6.5}
+2023-11-02 21:58:40,681   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-02 21:58:40,684   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-02 21:58:40,737      INFO  obico.moonraker_conn - connection is open
+2023-11-02 21:58:40,821      INFO  obico.moonraker_conn - Klippy ready
+2023-11-02 21:58:41,821      INFO  obico.app - detected state change: Offline -> Operational
+2023-11-02 21:58:41,831      INFO  obico.janus - Starting webcam streamer
+2023-11-02 21:58:41,836      INFO  obico.webcam_stream - Trying to start ffmpeg using camera-streamer H.264 source
+2023-11-02 21:58:42,823     ERROR  obico.webcam_stream - STDOUT:
+None
+STDERR:
+b'[tcp @ 0x146eff0] Connection to tcp://127.0.0.1:8080 failed: Connection refused\nhttp://127.0.0.1:8080/video.mp4: Connection refused\n'
+
+2023-11-02 21:58:42,824      INFO  obico.webcam_stream - No camera-stream H.264 source found. Continue to legacy streaming: ffmpeg failed! Exit code: 1
+2023-11-02 21:58:44,166     ERROR  obico.utils - 
+Traceback (most recent call last):
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_stream.py", line 102, in video_pipeline
+    self.ffmpeg_from_mjpeg()
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_stream.py", line 154, in ffmpeg_from_mjpeg
+    raise Exception('stream_url not configured. Unable to stream the webcam.')
+Exception: stream_url not configured. Unable to stream the webcam.
+2023-11-02 21:58:49,876      INFO  backoff - Backing off capture_jpeg(...) for 1.0s (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 21:58:50,877      INFO  backoff - Backing off capture_jpeg(...) for 1.5s (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 21:58:52,367     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 21:58:52,369     ERROR  obico.utils - 
+Traceback (most recent call last):
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 138, in pic_post_loop
+    self.post_pic_to_server(viewing_boost=True)
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 121, in post_pic_to_server
+    files = {'pic': capture_jpeg(self.config.webcam)}
+  File "/home/pi/moonraker-obico-env/lib/python3.9/site-packages/backoff/_sync.py", line 94, in retry
+    ret = target(*args, **kwargs)
+  File "/home/pi/moonraker-obico-env/lib/python3.9/site-packages/backoff/_sync.py", line 43, in retry
+    ret = target(*args, **kwargs)
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 59, in capture_jpeg
+    raise Exception('Invalid Webcam snapshot URL "{}" or stream URL: "{}"'.format(webcam_config.snapshot_url, webcam_config.stream_url))
+Exception: Invalid Webcam snapshot URL "" or stream URL: ""
+2023-11-02 22:01:03,245      INFO  backoff - Backing off capture_jpeg(...) for 0.7s (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 22:01:03,985      INFO  backoff - Backing off capture_jpeg(...) for 1.8s (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 22:01:05,784     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 22:01:05,785     ERROR  obico.utils - 
+Traceback (most recent call last):
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 138, in pic_post_loop
+    self.post_pic_to_server(viewing_boost=True)
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 121, in post_pic_to_server
+    files = {'pic': capture_jpeg(self.config.webcam)}
+  File "/home/pi/moonraker-obico-env/lib/python3.9/site-packages/backoff/_sync.py", line 94, in retry
+    ret = target(*args, **kwargs)
+  File "/home/pi/moonraker-obico-env/lib/python3.9/site-packages/backoff/_sync.py", line 43, in retry
+    ret = target(*args, **kwargs)
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 59, in capture_jpeg
+    raise Exception('Invalid Webcam snapshot URL "{}" or stream URL: "{}"'.format(webcam_config.snapshot_url, webcam_config.stream_url))
+Exception: Invalid Webcam snapshot URL "" or stream URL: ""
+2023-11-02 22:16:00,841      INFO  obico.app - detected state change: Operational -> Offline
+2023-11-02 22:16:11,970     ERROR  obico.utils - 
+Traceback (most recent call last):
+  File "/home/pi/moonraker-obico/moonraker_obico/app.py", line 215, in event_loop
+    self._process_event(event)
+  File "/home/pi/moonraker-obico/moonraker_obico/app.py", line 227, in _process_event
+    self._on_moonrakerconn_event(event)
+  File "/home/pi/moonraker-obico/moonraker_obico/app.py", line 267, in _on_moonrakerconn_event
+    self._received_klippy_update(event.data['result'])
+KeyError: 'result'
+2023-11-02 22:16:42,094      INFO  obico.app - detected state change: Offline -> Operational
+2023-11-02 22:17:16,109   WARNING  obico.ws - WS Closed - 1001 - Server Shutdown
+2023-11-02 22:17:16,111      INFO  obico.app - detected state change: Operational -> Offline
+2023-11-02 22:17:16,115   WARNING  obico.ws - WS Closed - None - None
+2023-11-02 22:19:02,484      INFO  backoff - Backing off capture_jpeg(...) for 0.2s (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 22:19:02,652      INFO  backoff - Backing off capture_jpeg(...) for 0.3s (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 22:19:02,913     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 22:19:02,915     ERROR  obico.utils - 
+Traceback (most recent call last):
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 138, in pic_post_loop
+    self.post_pic_to_server(viewing_boost=True)
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 121, in post_pic_to_server
+    files = {'pic': capture_jpeg(self.config.webcam)}
+  File "/home/pi/moonraker-obico-env/lib/python3.9/site-packages/backoff/_sync.py", line 94, in retry
+    ret = target(*args, **kwargs)
+  File "/home/pi/moonraker-obico-env/lib/python3.9/site-packages/backoff/_sync.py", line 43, in retry
+    ret = target(*args, **kwargs)
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 59, in capture_jpeg
+    raise Exception('Invalid Webcam snapshot URL "{}" or stream URL: "{}"'.format(webcam_config.snapshot_url, webcam_config.stream_url))
+Exception: Invalid Webcam snapshot URL "" or stream URL: ""
+2023-11-02 22:19:06,235      INFO  backoff - Backing off capture_jpeg(...) for 0.7s (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 22:19:06,960      INFO  backoff - Backing off capture_jpeg(...) for 0.8s (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 22:19:07,759     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 22:19:07,761     ERROR  obico.utils - 
+Traceback (most recent call last):
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 138, in pic_post_loop
+    self.post_pic_to_server(viewing_boost=True)
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 121, in post_pic_to_server
+    files = {'pic': capture_jpeg(self.config.webcam)}
+  File "/home/pi/moonraker-obico-env/lib/python3.9/site-packages/backoff/_sync.py", line 94, in retry
+    ret = target(*args, **kwargs)
+  File "/home/pi/moonraker-obico-env/lib/python3.9/site-packages/backoff/_sync.py", line 43, in retry
+    ret = target(*args, **kwargs)
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 59, in capture_jpeg
+    raise Exception('Invalid Webcam snapshot URL "{}" or stream URL: "{}"'.format(webcam_config.snapshot_url, webcam_config.stream_url))
+Exception: Invalid Webcam snapshot URL "" or stream URL: ""
+2023-11-02 22:19:16,347   WARNING  obico.moonraker_conn - Not connected to websocket server after 120s
+2023-11-02 22:19:16,369      INFO  obico.moonraker_conn - connection is open
+2023-11-02 22:19:16,463      INFO  obico.moonraker_conn - Klippy ready
+2023-11-02 22:19:16,719      INFO  obico.app - detected state change: Offline -> Operational
+2023-11-02 22:19:16,803      INFO  backoff - Backing off capture_jpeg(...) for 0.3s (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 22:19:17,138      INFO  backoff - Backing off capture_jpeg(...) for 0.5s (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 22:19:17,601     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 22:19:17,603     ERROR  obico.utils - 
+Traceback (most recent call last):
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 138, in pic_post_loop
+    self.post_pic_to_server(viewing_boost=True)
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 121, in post_pic_to_server
+    files = {'pic': capture_jpeg(self.config.webcam)}
+  File "/home/pi/moonraker-obico-env/lib/python3.9/site-packages/backoff/_sync.py", line 94, in retry
+    ret = target(*args, **kwargs)
+  File "/home/pi/moonraker-obico-env/lib/python3.9/site-packages/backoff/_sync.py", line 43, in retry
+    ret = target(*args, **kwargs)
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 59, in capture_jpeg
+    raise Exception('Invalid Webcam snapshot URL "{}" or stream URL: "{}"'.format(webcam_config.snapshot_url, webcam_config.stream_url))
+Exception: Invalid Webcam snapshot URL "" or stream URL: ""
+2023-11-02 22:19:31,327      INFO  backoff - Backing off capture_jpeg(...) for 0.1s (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 22:19:31,436      INFO  backoff - Backing off capture_jpeg(...) for 1.2s (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 22:19:32,610     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (Exception: Invalid Webcam snapshot URL "" or stream URL: "")
+2023-11-02 22:19:32,612     ERROR  obico.utils - 
+Traceback (most recent call last):
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 138, in pic_post_loop
+    self.post_pic_to_server(viewing_boost=True)
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 121, in post_pic_to_server
+    files = {'pic': capture_jpeg(self.config.webcam)}
+  File "/home/pi/moonraker-obico-env/lib/python3.9/site-packages/backoff/_sync.py", line 94, in retry
+    ret = target(*args, **kwargs)
+  File "/home/pi/moonraker-obico-env/lib/python3.9/site-packages/backoff/_sync.py", line 43, in retry
+    ret = target(*args, **kwargs)
+  File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 59, in capture_jpeg
+    raise Exception('Invalid Webcam snapshot URL "{}" or stream URL: "{}"'.format(webcam_config.snapshot_url, webcam_config.stream_url))
+Exception: Invalid Webcam snapshot URL "" or stream URL: ""
