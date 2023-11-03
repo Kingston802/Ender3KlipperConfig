@@ -135,3 +135,87 @@ Traceback (most recent call last):
   File "/home/pi/moonraker-obico/moonraker_obico/webcam_capture.py", line 59, in capture_jpeg
     raise Exception('Invalid Webcam snapshot URL "{}" or stream URL: "{}"'.format(webcam_config.snapshot_url, webcam_config.stream_url))
 Exception: Invalid Webcam snapshot URL "" or stream URL: ""
+2023-11-03 11:07:09,296      INFO  obico.app - Fetching linked printer...
+2023-11-03 11:07:09,804      INFO  obico.app - Linked printer: {'is_pro': True, 'id': 157624, 'name': 'Ender3', 'retract_on_pause': 6.5}
+2023-11-03 11:07:10,296   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-03 11:07:10,297   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-03 11:07:10,366      INFO  backoff - Backing off ensure_api_key(...) for 0.8s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x757a1430>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-11-03 11:07:11,213   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-03 11:07:11,243      INFO  obico.moonraker_conn - connection is open
+2023-11-03 11:07:11,261      INFO  backoff - Backing off wait_for_klippy_ready(...) for 0.8s (False)
+2023-11-03 11:07:11,299   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-03 11:07:12,198      INFO  obico.moonraker_conn - Klippy ready
+2023-11-03 11:07:12,784      INFO  obico.janus - Starting webcam streamer
+2023-11-03 11:07:12,816      INFO  obico.webcam_stream - Trying to start ffmpeg using camera-streamer H.264 source
+2023-11-03 11:07:12,960      INFO  obico.app - detected state change: Offline -> Operational
+2023-11-03 11:07:12,966   WARNING  obico.app - error response from moonraker, Event(name='message', data={'jsonrpc': '2.0', 'error': {'code': 400, 'message': "{'error': 'WebRequestError', 'message': 'Invalid argument'}"}, 'id': 4744}, sender='moonrakerconn')
+2023-11-03 11:07:13,806      INFO  backoff - Backing off wait_for_janus(...) for 0.4s (ConnectionRefusedError: [Errno 111] Connection refused)
+2023-11-03 11:07:15,800     ERROR  obico.webcam_stream - STDOUT:
+None
+STDERR:
+b'[tcp @ 0x15b6ff0] Connection to tcp://127.0.0.1:8080 failed: Connection refused\nhttp://127.0.0.1:8080/video.mp4: Connection refused\n'
+
+2023-11-03 11:07:15,803      INFO  obico.webcam_stream - No camera-stream H.264 source found. Continue to legacy streaming: ffmpeg failed! Exit code: 1
+2023-11-03 11:07:32,611      INFO  backoff - Backing off capture_jpeg(...) for 0.0s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:32,670      INFO  backoff - Backing off capture_jpeg(...) for 0.6s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:33,236     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:33,238      INFO  backoff - Backing off get_webcam_resolution(...) for 0.9s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:34,169      INFO  backoff - Backing off capture_jpeg(...) for 0.6s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:34,739      INFO  backoff - Backing off capture_jpeg(...) for 0.3s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:35,090     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:35,092      INFO  backoff - Backing off get_webcam_resolution(...) for 1.9s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:37,026      INFO  backoff - Backing off capture_jpeg(...) for 0.4s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:37,428      INFO  backoff - Backing off capture_jpeg(...) for 1.7s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:39,106     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:39,108      INFO  backoff - Backing off get_webcam_resolution(...) for 0.7s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:39,806      INFO  backoff - Backing off capture_jpeg(...) for 0.4s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:40,246      INFO  backoff - Backing off capture_jpeg(...) for 1.0s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:41,244     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:41,248      INFO  backoff - Backing off get_webcam_resolution(...) for 3.0s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:44,311      INFO  backoff - Backing off capture_jpeg(...) for 0.1s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:44,451      INFO  backoff - Backing off capture_jpeg(...) for 0.8s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:45,248     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:45,250      INFO  backoff - Backing off get_webcam_resolution(...) for 11.9s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:57,174      INFO  backoff - Backing off capture_jpeg(...) for 0.2s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:57,388      INFO  backoff - Backing off capture_jpeg(...) for 0.5s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:57,898     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:07:57,900      INFO  backoff - Backing off get_webcam_resolution(...) for 5.8s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:08:03,718      INFO  backoff - Backing off capture_jpeg(...) for 0.4s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:08:04,116      INFO  backoff - Backing off capture_jpeg(...) for 0.0s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:08:04,133     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:08:04,135      INFO  backoff - Backing off get_webcam_resolution(...) for 12.9s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:08:17,058      INFO  backoff - Backing off capture_jpeg(...) for 0.8s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:08:17,847      INFO  backoff - Backing off capture_jpeg(...) for 1.0s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:08:18,808     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:08:18,810      INFO  backoff - Backing off get_webcam_resolution(...) for 10.8s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:08:29,669      INFO  backoff - Backing off capture_jpeg(...) for 0.9s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:08:30,543      INFO  backoff - Backing off capture_jpeg(...) for 0.9s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:08:31,410     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:08:31,412      INFO  backoff - Backing off get_webcam_resolution(...) for 104.9s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:10:16,330      INFO  backoff - Backing off capture_jpeg(...) for 0.5s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:10:16,877      INFO  backoff - Backing off capture_jpeg(...) for 0.7s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:10:17,624     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:10:17,626      INFO  backoff - Backing off get_webcam_resolution(...) for 326.4s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:15:44,140      INFO  backoff - Backing off capture_jpeg(...) for 0.2s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:15:44,341      INFO  backoff - Backing off capture_jpeg(...) for 0.8s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:15:45,160     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:15:45,162      INFO  backoff - Backing off get_webcam_resolution(...) for 161.4s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:18:26,548      INFO  backoff - Backing off capture_jpeg(...) for 0.1s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:18:26,637      INFO  backoff - Backing off capture_jpeg(...) for 0.4s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:18:27,069     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:18:27,071      INFO  backoff - Backing off get_webcam_resolution(...) for 947.0s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:34:14,132      INFO  backoff - Backing off capture_jpeg(...) for 0.3s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:34:14,469      INFO  backoff - Backing off capture_jpeg(...) for 0.1s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:34:14,529     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 11:34:14,531      INFO  backoff - Backing off get_webcam_resolution(...) for 2550.0s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 12:16:44,654      INFO  backoff - Backing off capture_jpeg(...) for 0.2s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 12:16:44,832      INFO  backoff - Backing off capture_jpeg(...) for 1.7s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 12:16:46,754     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 12:16:46,756      INFO  backoff - Backing off get_webcam_resolution(...) for 483.4s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 12:24:50,274      INFO  backoff - Backing off capture_jpeg(...) for 0.6s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 12:24:50,835      INFO  backoff - Backing off capture_jpeg(...) for 1.2s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 12:24:52,027     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 12:24:52,029      INFO  backoff - Backing off get_webcam_resolution(...) for 14267.0s (urllib.error.HTTPError: HTTP Error 502: Bad Gateway)
+2023-11-03 13:18:41,898      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-03 13:18:42,376      INFO  obico.app - print event: PrintStarted (1698970721)
+                                                                                                                                                                                                                                                                           
