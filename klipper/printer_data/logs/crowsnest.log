@@ -8025,3 +8025,108 @@
 [11/04/23 16:44:39] crowsnest: V4L2 Control: No parameters set for [cam pseye]. Skipped.
 [11/04/23 16:44:42] crowsnest: Starting ustreamer with Device /dev/v4l/by-id/usb-OmniVision_Technologies__Inc._USB_Camera-B4.09.24.1-video-index0 ...
 [11/04/23 16:44:44] crowsnest:  ... Done!
+[11/04/23 17:01:36] crowsnest: crowsnest - A webcam Service for multiple Cams and Stream Services.
+[11/04/23 17:01:37] crowsnest: Version: v4.0.4-6-g767c53a
+[11/04/23 17:01:37] crowsnest: Prepare Startup ...
+[11/04/23 17:01:37] crowsnest: INFO: Host information:
+[11/04/23 17:01:37] crowsnest: Host Info: Distribution: Raspbian GNU/Linux 11 (bullseye)
+[11/04/23 17:01:37] crowsnest: Host Info: Release: MainsailOS release 1.2.1 (bullseye)
+[11/04/23 17:01:37] crowsnest: Host Info: Kernel: Linux 6.1.21-v7+ armv7l
+[11/04/23 17:01:37] crowsnest: Host Info: Model:  Raspberry Pi 3 Model B Plus Rev 1.3
+[11/04/23 17:01:37] crowsnest: Host Info: Available CPU Cores: 4
+[11/04/23 17:01:37] crowsnest: Host Info: Available Memory: 891312 kB
+[11/04/23 17:01:37] crowsnest: Host Info: Diskspace (avail. / total): 23G / 29G
+[11/04/23 17:01:37] crowsnest: INFO: Checking Dependencies
+[11/04/23 17:01:37] crowsnest: Dependency: 'crudini' found in /usr/bin/crudini.
+[11/04/23 17:01:37] crowsnest: Dependency: 'find' found in /usr/bin/find.
+[11/04/23 17:01:37] crowsnest: Dependency: 'xargs' found in /usr/bin/xargs.
+[11/04/23 17:01:37] crowsnest: Dependency: 'ustreamer' found in bin/ustreamer/ustreamer.
+[11/04/23 17:01:37] crowsnest: Dependency: 'camera-streamer' found in bin/camera-streamer/camera-streamer.
+[11/04/23 17:01:38] crowsnest: Version Control: ustreamer is up to date. (v5.38)
+[11/04/23 17:01:38] crowsnest: Version Control: camera-streamer new version available: (f0634f9) ().
+[11/04/23 17:01:38] crowsnest: INFO: Print Configfile: '/home/pi/printer_data/config/crowsnest.conf'
+[11/04/23 17:01:38] crowsnest:		[crowsnest]
+[11/04/23 17:01:38] crowsnest:		log_path: /home/pi/printer_data/logs/crowsnest.log
+[11/04/23 17:01:38] crowsnest:		log_level: verbose
+[11/04/23 17:01:38] crowsnest:		delete_log: false
+[11/04/23 17:01:38] crowsnest:		no_proxy: false
+[11/04/23 17:01:38] crowsnest:		
+[11/04/23 17:01:38] crowsnest:		[cam pseye]
+[11/04/23 17:01:38] crowsnest:		mode: ustreamer
+[11/04/23 17:01:38] crowsnest:		
+[11/04/23 17:01:38] crowsnest:		enable_rtsp: false
+[11/04/23 17:01:38] crowsnest:		rtsp_port: 8554
+[11/04/23 17:01:38] crowsnest:		port: 8080
+[11/04/23 17:01:38] crowsnest:		device: /dev/v4l/by-id/usb-OmniVision_Technologies__Inc._USB_Camera-B4.09.24.1-video-index0
+[11/04/23 17:01:38] crowsnest:		resolution: 640x480
+[11/04/23 17:01:38] crowsnest:		max_fps: 60
+[11/04/23 17:01:38] crowsnest: INFO: Detect available Devices
+[11/04/23 17:01:39] crowsnest: INFO: Found 1 total available Device(s)
+[11/04/23 17:01:39] crowsnest: INFO: Found 1 available v4l2 (UVC) camera(s)
+[11/04/23 17:01:39] crowsnest: /dev/v4l/by-id/usb-OmniVision_Technologies__Inc._USB_Camera-B4.09.24.1-video-index0 -> /dev/video0
+[11/04/23 17:01:39] crowsnest: Supported Formats:
+[11/04/23 17:01:39] crowsnest:		[0]: 'GRBG' (8-bit Bayer GRGR/BGBG)
+[11/04/23 17:01:39] crowsnest:		Size: Discrete 320x240
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.005s (187.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.007s (150.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.007s (137.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.008s (125.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.010s (100.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.013s (75.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.017s (60.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.020s (50.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.027s (37.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/04/23 17:01:39] crowsnest:		Size: Discrete 640x480
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.017s (60.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.020s (50.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.025s (40.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/04/23 17:01:39] crowsnest:		[1]: 'YUYV' (YUYV 4:2:2)
+[11/04/23 17:01:39] crowsnest:		Size: Discrete 320x240
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.005s (187.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.007s (150.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.007s (137.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.008s (125.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.010s (100.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.013s (75.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.017s (60.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.020s (50.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.027s (37.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/04/23 17:01:39] crowsnest:		Size: Discrete 640x480
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.017s (60.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.020s (50.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.025s (40.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.033s (30.000 fps)
+[11/04/23 17:01:39] crowsnest:		Interval: Discrete 0.067s (15.000 fps)
+[11/04/23 17:01:39] crowsnest: Supported Controls:
+[11/04/23 17:01:39] crowsnest:		
+[11/04/23 17:01:39] crowsnest:		User Controls
+[11/04/23 17:01:39] crowsnest:		
+[11/04/23 17:01:39] crowsnest:		brightness 0x00980900 (int)    : min=0 max=255 step=1 default=0 value=0 flags=slider
+[11/04/23 17:01:39] crowsnest:		contrast 0x00980901 (int)    : min=0 max=255 step=1 default=32 value=32 flags=slider
+[11/04/23 17:01:39] crowsnest:		saturation 0x00980902 (int)    : min=0 max=255 step=1 default=64 value=64 flags=slider
+[11/04/23 17:01:39] crowsnest:		hue 0x00980903 (int)    : min=-90 max=90 step=1 default=0 value=0 flags=slider
+[11/04/23 17:01:39] crowsnest:		white_balance_automatic 0x0098090c (bool)   : default=1 value=1
+[11/04/23 17:01:39] crowsnest:		exposure 0x00980911 (int)    : min=0 max=255 step=1 default=120 value=120 flags=inactive, volatile
+[11/04/23 17:01:39] crowsnest:		gain_automatic 0x00980912 (bool)   : default=1 value=1 flags=update
+[11/04/23 17:01:39] crowsnest:		gain 0x00980913 (int)    : min=0 max=63 step=1 default=20 value=20 flags=inactive, volatile
+[11/04/23 17:01:39] crowsnest:		horizontal_flip 0x00980914 (bool)   : default=0 value=0
+[11/04/23 17:01:39] crowsnest:		vertical_flip 0x00980915 (bool)   : default=0 value=0
+[11/04/23 17:01:39] crowsnest:		power_line_frequency 0x00980918 (menu)   : min=0 max=1 default=0 value=0
+[11/04/23 17:01:39] crowsnest:		0: Disabled
+[11/04/23 17:01:39] crowsnest:		1: 50 Hz
+[11/04/23 17:01:39] crowsnest:		sharpness 0x0098091b (int)    : min=0 max=63 step=1 default=0 value=0 flags=slider
+[11/04/23 17:01:39] crowsnest:		
+[11/04/23 17:01:39] crowsnest:		Camera Controls
+[11/04/23 17:01:39] crowsnest:		
+[11/04/23 17:01:39] crowsnest:		auto_exposure 0x009a0901 (menu)   : min=0 max=1 default=0 value=0 flags=update
+[11/04/23 17:01:39] crowsnest:		0: Auto Mode
+[11/04/23 17:01:39] crowsnest:		1: Manual Mode
+[11/04/23 17:01:39] crowsnest: Try to start configured Cams / Services...
+[11/04/23 17:01:42] crowsnest: INFO: Configuration of Section [cam pseye] looks good. Continue ...
+[11/05/23 09:45:28] crowsnest: V4L2 Control: No parameters set for [cam pseye]. Skipped.
+[11/05/23 09:45:30] crowsnest: Starting ustreamer with Device /dev/v4l/by-id/usb-OmniVision_Technologies__Inc._USB_Camera-B4.09.24.1-video-index0 ...
+[11/05/23 09:45:32] crowsnest:  ... Done!
