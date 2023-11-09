@@ -4221,3 +4221,50 @@ b'http://127.0.0.1:8080/video.mp4: Server returned 404 Not Found\n'
 2023-11-05 15:26:36,544      INFO  backoff - Backing off capture_jpeg(...) for 0.2s (AttributeError: 'ServerConn' object has no attribute 'snapshot_url')
 2023-11-05 15:26:36,770     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (AttributeError: 'ServerConn' object has no attribute 'snapshot_url')
 2023-11-05 15:26:36,771   WARNING  obico.server_conn - Failed to capture jpeg - 'ServerConn' object has no attribute 'snapshot_url'
+2023-11-05 15:22:07,086      INFO  obico.app - Fetching linked printer...
+2023-11-05 15:22:07,156      INFO  backoff - Backing off wait_for_auth_token(...) for 0.8s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='app.obico.io', port=443): Max retries exceeded with url: /api/v1/octo/printer/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x75758d60>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')))
+2023-11-05 15:22:07,942      INFO  obico.app - Fetching linked printer...
+2023-11-05 15:22:07,951      INFO  backoff - Backing off wait_for_auth_token(...) for 1.4s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='app.obico.io', port=443): Max retries exceeded with url: /api/v1/octo/printer/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x75758e80>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')))
+2023-11-05 15:22:09,354      INFO  obico.app - Fetching linked printer...
+2023-11-05 15:22:09,365      INFO  backoff - Backing off wait_for_auth_token(...) for 0.3s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='app.obico.io', port=443): Max retries exceeded with url: /api/v1/octo/printer/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x75758af0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')))
+2023-11-05 15:22:09,715      INFO  obico.app - Fetching linked printer...
+2023-11-05 15:22:09,724      INFO  backoff - Backing off wait_for_auth_token(...) for 1.4s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='app.obico.io', port=443): Max retries exceeded with url: /api/v1/octo/printer/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x757585f8>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')))
+2023-11-05 15:22:11,104      INFO  obico.app - Fetching linked printer...
+2023-11-05 15:22:11,114      INFO  backoff - Backing off wait_for_auth_token(...) for 0.3s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='app.obico.io', port=443): Max retries exceeded with url: /api/v1/octo/printer/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x75758d48>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')))
+2023-11-05 15:22:11,396      INFO  obico.app - Fetching linked printer...
+2023-11-05 15:22:11,405      INFO  backoff - Backing off wait_for_auth_token(...) for 18.3s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='app.obico.io', port=443): Max retries exceeded with url: /api/v1/octo/printer/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x75758d78>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')))
+2023-11-05 15:22:29,697      INFO  obico.app - Fetching linked printer...
+2023-11-05 15:22:29,706      INFO  backoff - Backing off wait_for_auth_token(...) for 10.5s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='app.obico.io', port=443): Max retries exceeded with url: /api/v1/octo/printer/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x75758700>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')))
+2023-11-05 15:22:40,245      INFO  obico.app - Fetching linked printer...
+2023-11-05 15:22:40,343      INFO  backoff - Backing off wait_for_auth_token(...) for 32.1s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='app.obico.io', port=443): Max retries exceeded with url: /api/v1/octo/printer/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x75758ad8>: Failed to establish a new connection: [Errno 101] Network is unreachable')))
+2023-11-05 18:08:38,096      INFO  obico.app - Fetching linked printer...
+2023-11-05 18:08:38,544      INFO  obico.app - Linked printer: {'is_pro': True, 'id': 157624, 'name': 'Ender3', 'retract_on_pause': 6.5}
+2023-11-05 18:08:38,973   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-05 18:08:38,974   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-05 18:08:39,013      INFO  obico.moonraker_conn - connection is open
+2023-11-05 18:08:39,222      INFO  obico.moonraker_conn - Klippy ready
+2023-11-05 18:08:40,060   WARNING  obico.app - error response from moonraker, Event(name='message', data={'jsonrpc': '2.0', 'error': {'code': 400, 'message': "{'error': 'WebRequestError', 'message': 'Invalid argument'}"}, 'id': 53545}, sender='moonrakerconn')
+2023-11-05 18:08:40,062      INFO  obico.app - detected state change: Offline -> Operational
+2023-11-05 18:08:40,075      INFO  obico.janus - Starting webcam streamer
+2023-11-05 18:08:40,084      INFO  obico.webcam_stream - Trying to start ffmpeg using camera-streamer H.264 source
+2023-11-05 18:08:41,092      INFO  backoff - Backing off wait_for_janus(...) for 1.0s (ConnectionRefusedError: [Errno 111] Connection refused)
+2023-11-05 18:08:42,607     ERROR  obico.webcam_stream - STDOUT:
+None
+STDERR:
+b'http://127.0.0.1:8080/video.mp4: Server returned 404 Not Found\n'
+
+2023-11-05 18:08:42,609      INFO  obico.webcam_stream - No camera-stream H.264 source found. Continue to legacy streaming: ffmpeg failed! Exit code: 1
+2023-11-05 18:13:31,642      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-05 18:13:32,099      INFO  obico.app - print event: PrintStarted (1699161211)
+2023-11-05 18:17:01,993      INFO  obico.app - detected state change: Printing -> Paused
+2023-11-05 18:17:01,995      INFO  obico.app - print event: PrintPaused (1699161211)
+2023-11-05 18:18:01,939      INFO  obico.app - detected state change: Paused -> Printing
+2023-11-05 18:18:01,942      INFO  obico.app - print event: PrintResumed (1699161211)
+2023-11-05 21:06:00,463      INFO  obico.app - detected state change: Printing -> Operational
+2023-11-05 21:06:00,468      INFO  obico.app - print event: PrintDone (1699161211)
+2023-11-05 21:23:29,176      INFO  backoff - Backing off capture_jpeg(...) for 0.1s (AttributeError: 'ServerConn' object has no attribute 'snapshot_url')
+2023-11-05 21:23:29,234      INFO  backoff - Backing off capture_jpeg(...) for 0.3s (AttributeError: 'ServerConn' object has no attribute 'snapshot_url')
+2023-11-05 21:23:29,554     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (AttributeError: 'ServerConn' object has no attribute 'snapshot_url')
+2023-11-05 21:23:29,555   WARNING  obico.server_conn - Failed to capture jpeg - 'ServerConn' object has no attribute 'snapshot_url'
+2023-11-05 21:23:29,950   WARNING  obico.app - error response from moonraker, Event(name='message', data={'jsonrpc': '2.0', 'error': {'code': 400, 'message': "{'error': 'WebRequestError', 'message': 'Must home axis first: 5.000 203.800 150.300 [8075.172]'}"}, 'id': 77603}, sender='moonrakerconn')
+2023-11-05 21:23:30,332   WARNING  obico.app - error response from moonraker, Event(name='message', data={'jsonrpc': '2.0', 'error': {'code': 400, 'message': "{'error': 'WebRequestError', 'message': 'Must home axis first: 5.000 203.800 150.300 [8075.172]'}"}, 'id': 16632}, sender='moonrakerconn')
