@@ -4268,3 +4268,92 @@ b'http://127.0.0.1:8080/video.mp4: Server returned 404 Not Found\n'
 2023-11-05 21:23:29,555   WARNING  obico.server_conn - Failed to capture jpeg - 'ServerConn' object has no attribute 'snapshot_url'
 2023-11-05 21:23:29,950   WARNING  obico.app - error response from moonraker, Event(name='message', data={'jsonrpc': '2.0', 'error': {'code': 400, 'message': "{'error': 'WebRequestError', 'message': 'Must home axis first: 5.000 203.800 150.300 [8075.172]'}"}, 'id': 77603}, sender='moonrakerconn')
 2023-11-05 21:23:30,332   WARNING  obico.app - error response from moonraker, Event(name='message', data={'jsonrpc': '2.0', 'error': {'code': 400, 'message': "{'error': 'WebRequestError', 'message': 'Must home axis first: 5.000 203.800 150.300 [8075.172]'}"}, 'id': 16632}, sender='moonrakerconn')
+2023-11-09 16:38:52,757      INFO  obico.app - Fetching linked printer...
+2023-11-09 16:38:53,309      INFO  obico.app - Linked printer: {'is_pro': True, 'id': 157624, 'name': 'Ender3', 'retract_on_pause': 6.5}
+2023-11-09 16:38:53,726   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-09 16:38:53,728   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-09 16:38:54,473      INFO  backoff - Backing off ensure_api_key(...) for 0.6s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7570c430>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-11-09 16:38:54,729   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-09 16:38:55,101   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-09 16:38:55,110      INFO  backoff - Backing off ensure_api_key(...) for 1.5s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7570cad8>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-11-09 16:38:55,732   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-09 16:38:56,661   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-09 16:38:56,669      INFO  backoff - Backing off ensure_api_key(...) for 1.9s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7570cf70>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-11-09 16:38:56,735   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-09 16:38:57,739   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-09 16:38:58,594   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-09 16:38:58,635      INFO  obico.moonraker_conn - connection is open
+2023-11-09 16:38:58,665      INFO  backoff - Backing off wait_for_klippy_ready(...) for 0.5s (False)
+2023-11-09 16:38:58,945      INFO  obico.janus - Starting webcam streamer
+2023-11-09 16:38:58,950      INFO  obico.webcam_stream - Trying to start ffmpeg using camera-streamer H.264 source
+2023-11-09 16:38:59,206      INFO  backoff - Backing off wait_for_klippy_ready(...) for 0.9s (False)
+2023-11-09 16:38:59,982      INFO  backoff - Backing off wait_for_janus(...) for 0.5s (ConnectionRefusedError: [Errno 111] Connection refused)
+2023-11-09 16:39:00,298      INFO  obico.moonraker_conn - Klippy ready
+2023-11-09 16:39:00,545      INFO  obico.app - detected state change: Offline -> Operational
+2023-11-09 16:39:00,550   WARNING  obico.app - error response from moonraker, Event(name='message', data={'jsonrpc': '2.0', 'error': {'code': 400, 'message': "{'error': 'WebRequestError', 'message': 'Invalid argument'}"}, 'id': 7900}, sender='moonrakerconn')
+2023-11-09 16:39:03,077     ERROR  obico.webcam_stream - STDOUT:
+None
+STDERR:
+b'http://127.0.0.1:8080/video.mp4: Server returned 404 Not Found\n'
+
+2023-11-09 16:39:03,078      INFO  obico.webcam_stream - No camera-stream H.264 source found. Continue to legacy streaming: ffmpeg failed! Exit code: 1
+2023-11-09 16:42:25,163      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-09 16:42:25,624      INFO  obico.app - print event: PrintStarted (1699501344)
+2023-11-09 16:46:25,873      INFO  obico.app - detected state change: Printing -> Paused
+2023-11-09 16:46:25,876      INFO  obico.app - print event: PrintPaused (1699501344)
+2023-11-09 16:49:56,072      INFO  obico.app - detected state change: Paused -> Printing
+2023-11-09 16:49:56,073      INFO  obico.app - print event: PrintResumed (1699501344)
+2023-11-09 16:51:56,286   WARNING  obico.webcam_capture - Failed to capture jpeg - 429 Client Error: Too Many Requests for url: https://app.obico.io/api/v1/octo/pic/
+2023-11-09 19:37:10,087      INFO  obico.app - detected state change: Printing -> Operational
+2023-11-09 19:37:10,093      INFO  obico.app - print event: PrintDone (1699501344)
+2023-11-09 19:47:57,051      INFO  obico.app - detected state change: Operational -> Offline
+2023-11-10 05:05:27,855   WARNING  obico.ws - WS Closed - None - None
+2023-11-10 08:35:18,865      INFO  obico.app - detected state change: Offline -> Printing
+2023-11-10 08:51:49,778      INFO  obico.app - detected state change: Printing -> Operational
+2023-11-10 08:51:49,780      INFO  obico.app - print event: PrintCancelled (1699558518)
+2023-11-10 08:51:50,287      INFO  obico.app - print event: PrintFailed (1699558518)
+2023-11-10 08:51:52,045   WARNING  obico.webcam_capture - Failed to capture jpeg - 429 Client Error: Too Many Requests for url: https://app.obico.io/api/v1/octo/pic/
+2023-11-10 08:51:52,464   WARNING  obico.webcam_capture - Failed to capture jpeg - 429 Client Error: Too Many Requests for url: https://app.obico.io/api/v1/octo/pic/
+2023-11-10 08:51:52,874   WARNING  obico.webcam_capture - Failed to capture jpeg - 429 Client Error: Too Many Requests for url: https://app.obico.io/api/v1/octo/pic/
+2023-11-10 08:51:53,270   WARNING  obico.webcam_capture - Failed to capture jpeg - 429 Client Error: Too Many Requests for url: https://app.obico.io/api/v1/octo/pic/
+2023-11-10 15:46:45,122      INFO  obico.app - detected state change: Operational -> Offline
+2023-11-11 01:44:30,753   WARNING  obico.ws - WS Closed - None - None
+2023-11-11 12:20:21,335      INFO  obico.app - detected state change: Offline -> Operational
+2023-11-11 12:26:12,934      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-11 12:26:13,433      INFO  obico.app - print event: PrintStarted (1699658772)
+2023-11-11 12:30:29,271      INFO  obico.app - detected state change: Printing -> Operational
+2023-11-11 12:30:29,273      INFO  obico.app - print event: PrintCancelled (1699658772)
+2023-11-11 12:30:29,775      INFO  obico.app - print event: PrintFailed (1699658772)
+2023-11-11 12:30:37,800      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-11 12:30:38,285      INFO  obico.app - print event: PrintStarted (1699659037)
+2023-11-11 12:32:37,688      INFO  obico.app - detected state change: Printing -> Operational
+2023-11-11 12:32:37,689      INFO  obico.app - print event: PrintCancelled (1699659037)
+2023-11-11 12:32:38,193      INFO  obico.app - print event: PrintFailed (1699659037)
+2023-11-11 12:34:36,920      INFO  backoff - Backing off capture_jpeg(...) for 1.0s (AttributeError: 'ServerConn' object has no attribute 'snapshot_url')
+2023-11-11 12:34:37,880      INFO  backoff - Backing off capture_jpeg(...) for 1.8s (AttributeError: 'ServerConn' object has no attribute 'snapshot_url')
+2023-11-11 12:34:39,698     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (AttributeError: 'ServerConn' object has no attribute 'snapshot_url')
+2023-11-11 12:34:39,699   WARNING  obico.server_conn - Failed to capture jpeg - 'ServerConn' object has no attribute 'snapshot_url'
+2023-11-11 12:35:09,440      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-11 12:35:09,936      INFO  obico.app - print event: PrintStarted (1699659309)
+2023-11-11 12:39:09,658      INFO  obico.app - detected state change: Printing -> Paused
+2023-11-11 12:39:09,661      INFO  obico.app - print event: PrintPaused (1699659309)
+2023-11-11 12:39:54,810      INFO  obico.app - detected state change: Paused -> Operational
+2023-11-11 12:39:54,815      INFO  obico.app - print event: PrintCancelled (1699659309)
+2023-11-11 12:39:55,323      INFO  obico.app - print event: PrintFailed (1699659309)
+2023-11-11 12:39:58,314      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-11 12:39:58,816      INFO  obico.app - print event: PrintStarted (1699659598)
+2023-11-11 12:44:20,876      INFO  obico.app - detected state change: Printing -> Operational
+2023-11-11 12:44:20,877      INFO  obico.app - print event: PrintCancelled (1699659598)
+2023-11-11 12:44:21,380      INFO  obico.app - print event: PrintFailed (1699659598)
+2023-11-11 12:45:50,164      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-11 12:45:50,733      INFO  obico.app - print event: PrintStarted (1699659949)
+2023-11-11 12:48:33,908      INFO  obico.app - detected state change: Printing -> Operational
+2023-11-11 12:48:33,912      INFO  obico.app - print event: PrintCancelled (1699659949)
+2023-11-11 12:48:34,417      INFO  obico.app - print event: PrintFailed (1699659949)
+2023-11-11 12:50:15,999      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-11 12:50:16,475      INFO  obico.app - print event: PrintStarted (1699660215)
+2023-11-11 13:28:49,086      INFO  obico.app - detected state change: Printing -> Paused
+2023-11-11 13:28:49,089      INFO  obico.app - print event: PrintPaused (1699660215)
+2023-11-11 13:38:21,722      INFO  obico.app - detected state change: Paused -> Operational
+2023-11-11 13:38:21,727      INFO  obico.app - print event: PrintCancelled (1699660215)
+2023-11-11 13:38:22,236      INFO  obico.app - print event: PrintFailed (1699660215)
