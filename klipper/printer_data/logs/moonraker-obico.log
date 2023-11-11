@@ -4357,3 +4357,38 @@ b'http://127.0.0.1:8080/video.mp4: Server returned 404 Not Found\n'
 2023-11-11 13:38:21,722      INFO  obico.app - detected state change: Paused -> Operational
 2023-11-11 13:38:21,727      INFO  obico.app - print event: PrintCancelled (1699660215)
 2023-11-11 13:38:22,236      INFO  obico.app - print event: PrintFailed (1699660215)
+2023-11-11 14:01:04,168      INFO  obico.app - Fetching linked printer...
+2023-11-11 14:01:05,059      INFO  obico.app - Linked printer: {'is_pro': True, 'id': 157624, 'name': 'Ender3', 'retract_on_pause': 6.5}
+2023-11-11 14:01:06,091   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-11 14:01:06,094   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-11 14:01:06,132      INFO  backoff - Backing off ensure_api_key(...) for 0.5s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x757b14f0>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-11-11 14:01:06,662   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-11 14:01:06,671      INFO  backoff - Backing off ensure_api_key(...) for 1.0s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x757b1ac0>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-11-11 14:01:07,094   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-11 14:01:07,712   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-11 14:01:07,722      INFO  backoff - Backing off ensure_api_key(...) for 0.8s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7577b0b8>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-11-11 14:01:08,096   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-11 14:01:08,474   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-11 14:01:08,496      INFO  backoff - Backing off ensure_api_key(...) for 4.3s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7459b478>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-11-11 14:01:09,098   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-11 14:01:10,100   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-11 14:01:11,102   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-11 14:01:12,104   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-11 14:01:12,783   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-11 14:01:12,820      INFO  obico.moonraker_conn - connection is open
+2023-11-11 14:01:13,072      INFO  obico.moonraker_conn - Klippy ready
+2023-11-11 14:01:13,212   WARNING  obico.app - error response from moonraker, Event(name='message', data={'jsonrpc': '2.0', 'error': {'code': 400, 'message': "{'error': 'WebRequestError', 'message': 'Invalid argument'}"}, 'id': 3888}, sender='moonrakerconn')
+2023-11-11 14:01:13,224      INFO  obico.janus - Starting webcam streamer
+2023-11-11 14:01:13,238      INFO  obico.webcam_stream - Trying to start ffmpeg using camera-streamer H.264 source
+2023-11-11 14:01:13,324      INFO  obico.app - detected state change: Offline -> Operational
+2023-11-11 14:01:14,282      INFO  backoff - Backing off wait_for_janus(...) for 0.8s (ConnectionRefusedError: [Errno 111] Connection refused)
+2023-11-11 14:01:16,024     ERROR  obico.webcam_stream - STDOUT:
+None
+STDERR:
+b'http://127.0.0.1:8080/video.mp4: Server returned 404 Not Found\n'
+
+2023-11-11 14:01:16,026      INFO  obico.webcam_stream - No camera-stream H.264 source found. Continue to legacy streaming: ffmpeg failed! Exit code: 1
+2023-11-11 14:31:03,372      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-11 14:31:03,858      INFO  obico.app - print event: PrintStarted (1699666263)
+2023-11-11 16:43:07,285      INFO  obico.app - detected state change: Printing -> Operational
+2023-11-11 16:43:07,286      INFO  obico.app - print event: PrintDone (1699666263)
