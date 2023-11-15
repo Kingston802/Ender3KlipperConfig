@@ -4392,3 +4392,40 @@ b'http://127.0.0.1:8080/video.mp4: Server returned 404 Not Found\n'
 2023-11-11 14:31:03,858      INFO  obico.app - print event: PrintStarted (1699666263)
 2023-11-11 16:43:07,285      INFO  obico.app - detected state change: Printing -> Operational
 2023-11-11 16:43:07,286      INFO  obico.app - print event: PrintDone (1699666263)
+2023-11-11 16:51:38,816      INFO  obico.app - Fetching linked printer...
+2023-11-11 16:51:39,269      INFO  obico.app - Linked printer: {'is_pro': True, 'id': 157624, 'name': 'Ender3', 'retract_on_pause': 6.5}
+2023-11-11 16:51:39,691   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-11 16:51:39,693   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-11 16:51:39,747      INFO  backoff - Backing off ensure_api_key(...) for 0.7s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7573b538>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-11-12 08:10:42,961   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-12 08:10:42,985      INFO  backoff - Backing off ensure_api_key(...) for 0.8s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7573bb68>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-11-12 08:10:43,187   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-12 08:10:43,816   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-12 08:10:43,858      INFO  obico.moonraker_conn - connection is open
+2023-11-12 08:10:43,890      INFO  backoff - Backing off wait_for_klippy_ready(...) for 0.9s (False)
+2023-11-12 08:10:44,303      INFO  obico.janus - Starting webcam streamer
+2023-11-12 08:10:44,310      INFO  obico.webcam_stream - Trying to start ffmpeg using camera-streamer H.264 source
+2023-11-12 08:10:44,940      INFO  obico.moonraker_conn - Klippy ready
+2023-11-12 08:10:45,195      INFO  obico.app - detected state change: Offline -> Operational
+2023-11-12 08:10:45,208   WARNING  obico.app - error response from moonraker, Event(name='message', data={'jsonrpc': '2.0', 'error': {'code': 400, 'message': "{'error': 'WebRequestError', 'message': 'Invalid argument'}"}, 'id': 20339}, sender='moonrakerconn')
+2023-11-12 08:10:45,311      INFO  backoff - Backing off wait_for_janus(...) for 0.5s (ConnectionRefusedError: [Errno 111] Connection refused)
+2023-11-12 08:10:48,628     ERROR  obico.webcam_stream - STDOUT:
+None
+STDERR:
+b'http://127.0.0.1:8080/video.mp4: Server returned 404 Not Found\n'
+
+2023-11-12 08:10:48,629      INFO  obico.webcam_stream - No camera-stream H.264 source found. Continue to legacy streaming: ffmpeg failed! Exit code: 1
+2023-11-12 08:11:42,630      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-12 08:11:43,124      INFO  obico.app - print event: PrintStarted (1699729902)
+2023-11-12 10:48:43,697   WARNING  obico.webcam_capture - Failed to capture jpeg - 429 Client Error: Too Many Requests for url: https://app.obico.io/api/v1/octo/pic/
+2023-11-12 10:48:46,113   WARNING  obico.webcam_capture - Failed to capture jpeg - 429 Client Error: Too Many Requests for url: https://app.obico.io/api/v1/octo/pic/
+2023-11-12 10:48:47,035   WARNING  obico.webcam_capture - Failed to capture jpeg - 429 Client Error: Too Many Requests for url: https://app.obico.io/api/v1/octo/pic/
+2023-11-12 10:48:47,484   WARNING  obico.webcam_capture - Failed to capture jpeg - 429 Client Error: Too Many Requests for url: https://app.obico.io/api/v1/octo/pic/
+2023-11-12 10:48:47,892   WARNING  obico.webcam_capture - Failed to capture jpeg - 429 Client Error: Too Many Requests for url: https://app.obico.io/api/v1/octo/pic/
+2023-11-12 10:48:56,303   WARNING  obico.webcam_capture - Failed to capture jpeg - 429 Client Error: Too Many Requests for url: https://app.obico.io/api/v1/octo/pic/
+2023-11-12 11:03:18,494      INFO  obico.app - detected state change: Printing -> Operational
+2023-11-12 11:03:18,496      INFO  obico.app - print event: PrintDone (1699729902)
+2023-11-12 11:20:05,507      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-12 11:20:06,023      INFO  obico.app - print event: PrintStarted (1699741205)
+2023-11-12 13:06:14,185      INFO  obico.app - detected state change: Printing -> Paused
+2023-11-12 13:06:14,186      INFO  obico.app - print event: PrintPaused (1699741205)
