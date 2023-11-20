@@ -4485,3 +4485,44 @@ b'[tcp @ 0x19a4ff0] Connection to tcp://127.0.0.1:8080 failed: Connection refuse
 2023-11-16 17:53:15,812      INFO  obico.app - print event: PrintStarted (1700110395)
 2023-11-16 19:37:23,539      INFO  obico.app - detected state change: Printing -> Paused
 2023-11-16 19:37:23,540      INFO  obico.app - print event: PrintPaused (1700110395)
+2023-11-20 22:33:02,039      INFO  obico.app - Fetching linked printer...
+2023-11-20 22:33:02,617      INFO  obico.app - Linked printer: {'is_pro': True, 'id': 157624, 'name': 'Ender3', 'retract_on_pause': 6.5}
+2023-11-20 22:33:03,049   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-20 22:33:03,051   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-20 22:33:03,567      INFO  backoff - Backing off ensure_api_key(...) for 0.8s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7574a4c0>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-11-20 22:33:04,051   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-20 22:33:04,327   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-20 22:33:04,375      INFO  obico.moonraker_conn - connection is open
+2023-11-20 22:33:04,414      INFO  backoff - Backing off wait_for_klippy_ready(...) for 0.8s (False)
+2023-11-20 22:33:05,161      INFO  obico.janus - Starting webcam streamer
+2023-11-20 22:33:05,167      INFO  obico.webcam_stream - Trying to start ffmpeg using camera-streamer H.264 source
+2023-11-20 22:33:05,289      INFO  backoff - Backing off wait_for_klippy_ready(...) for 0.9s (False)
+2023-11-20 22:33:06,182      INFO  backoff - Backing off wait_for_janus(...) for 1.0s (ConnectionRefusedError: [Errno 111] Connection refused)
+2023-11-20 22:33:06,209      INFO  backoff - Backing off wait_for_klippy_ready(...) for 1.3s (False)
+2023-11-20 22:33:07,565      INFO  backoff - Backing off wait_for_klippy_ready(...) for 3.4s (False)
+2023-11-20 22:33:08,219     ERROR  obico.webcam_stream - STDOUT:
+None
+STDERR:
+b'http://127.0.0.1:8080/video.mp4: Server returned 404 Not Found\n'
+
+2023-11-20 22:33:08,220      INFO  obico.webcam_stream - No camera-stream H.264 source found. Continue to legacy streaming: ffmpeg failed! Exit code: 1
+2023-11-20 22:33:10,943      INFO  backoff - Backing off wait_for_klippy_ready(...) for 7.1s (False)
+2023-11-20 22:33:18,065      INFO  backoff - Backing off wait_for_klippy_ready(...) for 15.8s (False)
+2023-11-20 22:33:33,876      INFO  backoff - Backing off wait_for_klippy_ready(...) for 19.5s (False)
+2023-11-20 22:33:53,371      INFO  backoff - Backing off wait_for_klippy_ready(...) for 2.1s (False)
+2023-11-20 22:33:55,494      INFO  backoff - Backing off wait_for_klippy_ready(...) for 11.0s (False)
+2023-11-20 22:34:06,481      INFO  backoff - Backing off wait_for_klippy_ready(...) for 52.1s (False)
+2023-11-20 22:34:58,693      INFO  backoff - Backing off wait_for_klippy_ready(...) for 37.3s (False)
+2023-11-20 22:35:36,042      INFO  backoff - Backing off wait_for_klippy_ready(...) for 55.6s (False)
+2023-11-20 22:36:31,763      INFO  backoff - Backing off wait_for_klippy_ready(...) for 16.3s (False)
+2023-11-20 22:36:48,062      INFO  backoff - Backing off wait_for_klippy_ready(...) for 52.2s (False)
+2023-11-20 22:37:40,330      INFO  backoff - Backing off wait_for_klippy_ready(...) for 5.8s (False)
+2023-11-20 22:37:46,145      INFO  backoff - Backing off wait_for_klippy_ready(...) for 34.3s (False)
+2023-11-20 22:38:20,485      INFO  backoff - Backing off wait_for_klippy_ready(...) for 15.8s (False)
+2023-11-20 22:38:36,332      INFO  backoff - Backing off wait_for_klippy_ready(...) for 53.3s (False)
+2023-11-20 22:39:29,671      INFO  backoff - Backing off wait_for_klippy_ready(...) for 57.5s (False)
+2023-11-20 22:40:27,282      INFO  backoff - Backing off wait_for_klippy_ready(...) for 20.8s (False)
+2023-11-20 22:40:48,090      INFO  backoff - Backing off wait_for_klippy_ready(...) for 16.5s (False)
+2023-11-20 22:41:04,635      INFO  backoff - Backing off wait_for_klippy_ready(...) for 49.2s (False)
+2023-11-20 22:41:53,900      INFO  backoff - Backing off wait_for_klippy_ready(...) for 42.4s (False)
+                                                                                                     
