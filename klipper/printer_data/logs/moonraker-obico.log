@@ -4460,3 +4460,28 @@ b'http://127.0.0.1:8080/video.mp4: Server returned 404 Not Found\n'
 2023-11-16 08:28:17,334      INFO  obico.app - print event: PrintStarted (1700076496)
 2023-11-16 11:05:58,432      INFO  obico.app - detected state change: Printing -> Paused
 2023-11-16 11:05:58,438      INFO  obico.app - print event: PrintPaused (1700076496)
+2023-11-16 17:46:18,268      INFO  obico.app - Fetching linked printer...
+2023-11-16 17:46:18,765      INFO  obico.app - Linked printer: {'is_pro': True, 'id': 157624, 'name': 'Ender3', 'retract_on_pause': 6.5}
+2023-11-16 17:46:19,262   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-16 17:46:19,265   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-16 17:46:19,369      INFO  backoff - Backing off ensure_api_key(...) for 0.6s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x745bf508>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-11-16 17:46:19,988   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-16 17:46:20,027      INFO  obico.moonraker_conn - connection is open
+2023-11-16 17:46:20,048      INFO  backoff - Backing off wait_for_klippy_ready(...) for 0.2s (False)
+2023-11-16 17:46:20,301      INFO  backoff - Backing off wait_for_klippy_ready(...) for 1.8s (False)
+2023-11-16 17:46:20,482      INFO  obico.janus - Starting webcam streamer
+2023-11-16 17:46:20,509      INFO  obico.webcam_stream - Trying to start ffmpeg using camera-streamer H.264 source
+2023-11-16 17:46:21,511      INFO  backoff - Backing off wait_for_janus(...) for 0.5s (ConnectionRefusedError: [Errno 111] Connection refused)
+2023-11-16 17:46:22,293      INFO  obico.moonraker_conn - Klippy ready
+2023-11-16 17:46:22,333   WARNING  obico.app - error response from moonraker, Event(name='message', data={'jsonrpc': '2.0', 'error': {'code': 400, 'message': "{'error': 'WebRequestError', 'message': 'Invalid argument'}"}, 'id': 54705}, sender='moonrakerconn')
+2023-11-16 17:46:22,532      INFO  obico.app - detected state change: Offline -> Operational
+2023-11-16 17:46:24,603     ERROR  obico.webcam_stream - STDOUT:
+None
+STDERR:
+b'[tcp @ 0x19a4ff0] Connection to tcp://127.0.0.1:8080 failed: Connection refused\nhttp://127.0.0.1:8080/video.mp4: Connection refused\n'
+
+2023-11-16 17:46:24,605      INFO  obico.webcam_stream - No camera-stream H.264 source found. Continue to legacy streaming: ffmpeg failed! Exit code: 1
+2023-11-16 17:53:15,305      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-16 17:53:15,812      INFO  obico.app - print event: PrintStarted (1700110395)
+2023-11-16 19:37:23,539      INFO  obico.app - detected state change: Printing -> Paused
+2023-11-16 19:37:23,540      INFO  obico.app - print event: PrintPaused (1700110395)
