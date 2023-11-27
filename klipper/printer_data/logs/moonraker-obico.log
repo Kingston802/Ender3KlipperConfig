@@ -4563,3 +4563,59 @@ b'http://127.0.0.1:8080/video.mp4: Server returned 404 Not Found\n'
 2023-11-21 14:03:06,094   WARNING  obico.ws - WS Closed - None - None
 2023-11-21 14:05:16,779   WARNING  obico.ws - WS Closed - None - None
 2023-11-21 14:12:40,172   WARNING  obico.ws - WS Closed - None - None
+2023-11-23 18:21:14,315      INFO  obico.app - Fetching linked printer...
+2023-11-23 18:21:14,796      INFO  obico.app - Linked printer: {'is_pro': True, 'id': 157624, 'name': 'Ender3', 'retract_on_pause': 6.5}
+2023-11-23 18:21:15,240   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-11-23 18:21:15,247   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-23 18:21:15,343      INFO  backoff - Backing off ensure_api_key(...) for 0.6s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75755508>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-11-23 18:21:15,987   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-11-23 18:21:16,029      INFO  obico.moonraker_conn - connection is open
+2023-11-23 18:21:16,063      INFO  backoff - Backing off wait_for_klippy_ready(...) for 0.7s (False)
+2023-11-23 18:21:16,472      INFO  obico.janus - Starting webcam streamer
+2023-11-23 18:21:16,480      INFO  obico.webcam_stream - Trying to start ffmpeg using camera-streamer H.264 source
+2023-11-23 18:21:16,790      INFO  backoff - Backing off wait_for_klippy_ready(...) for 0.9s (False)
+2023-11-23 18:21:17,494      INFO  backoff - Backing off wait_for_janus(...) for 0.9s (ConnectionRefusedError: [Errno 111] Connection refused)
+2023-11-23 18:21:17,847      INFO  obico.moonraker_conn - Klippy ready
+2023-11-23 18:21:18,096      INFO  obico.app - detected state change: Offline -> Operational
+2023-11-23 18:21:18,109   WARNING  obico.app - error response from moonraker, Event(name='message', data={'jsonrpc': '2.0', 'error': {'code': 400, 'message': "{'error': 'WebRequestError', 'message': 'Invalid argument'}"}, 'id': 78336}, sender='moonrakerconn')
+2023-11-23 18:21:20,555     ERROR  obico.webcam_stream - STDOUT:
+None
+STDERR:
+b'[tcp @ 0x123eff0] Connection to tcp://127.0.0.1:8080 failed: Connection refused\nhttp://127.0.0.1:8080/video.mp4: Connection refused\n'
+
+2023-11-23 18:21:20,557      INFO  obico.webcam_stream - No camera-stream H.264 source found. Continue to legacy streaming: ffmpeg failed! Exit code: 1
+2023-11-23 18:35:18,037      INFO  obico.app - detected state change: Operational -> Offline
+2023-11-23 18:37:47,130      INFO  obico.app - detected state change: Offline -> Operational
+2023-11-23 18:38:09,358      INFO  obico.app - detected state change: Operational -> Offline
+2023-11-23 18:42:47,459      INFO  obico.app - detected state change: Offline -> Operational
+2023-11-23 18:43:13,806      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-23 18:43:14,312      INFO  obico.app - print event: PrintStarted (1700718193)
+2023-11-23 21:30:25,620      INFO  obico.app - detected state change: Printing -> Operational
+2023-11-23 21:30:25,623      INFO  obico.app - print event: PrintDone (1700718193)
+2023-11-23 21:44:54,677      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-23 21:44:55,123      INFO  obico.app - print event: PrintStarted (1700729094)
+2023-11-23 22:00:10,073      INFO  obico.app - detected state change: Printing -> Operational
+2023-11-23 22:00:10,075      INFO  obico.app - print event: PrintCancelled (1700729094)
+2023-11-23 22:00:10,578      INFO  obico.app - print event: PrintFailed (1700729094)
+2023-11-23 22:06:27,218      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-23 22:06:27,651      INFO  obico.app - print event: PrintStarted (1700730386)
+2023-11-23 22:09:28,018      INFO  obico.app - detected state change: Printing -> Paused
+2023-11-23 22:09:28,020      INFO  obico.app - print event: PrintPaused (1700730386)
+2023-11-23 22:12:03,281      INFO  obico.app - detected state change: Paused -> Operational
+2023-11-23 22:12:03,284      INFO  obico.app - print event: PrintCancelled (1700730386)
+2023-11-23 22:12:03,786      INFO  obico.app - print event: PrintFailed (1700730386)
+2023-11-23 22:12:09,556      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-23 22:12:10,004      INFO  obico.app - print event: PrintStarted (1700730729)
+2023-11-23 22:14:07,425      INFO  obico.app - detected state change: Printing -> Operational
+2023-11-23 22:14:07,426      INFO  obico.app - print event: PrintCancelled (1700730729)
+2023-11-23 22:14:07,930      INFO  obico.app - print event: PrintFailed (1700730729)
+2023-11-23 22:15:18,663      INFO  obico.app - detected state change: Operational -> Printing
+2023-11-23 22:15:19,105      INFO  obico.app - print event: PrintStarted (1700730918)
+2023-11-23 22:21:29,322      INFO  obico.app - detected state change: Printing -> Offline
+2023-11-24 11:27:28,311   WARNING  obico.ws - WS Closed - None - None
+2023-11-24 13:04:39,897   WARNING  obico.ws - WS Closed - None - None
+2023-11-24 13:06:50,675   WARNING  obico.ws - WS Closed - None - None
+2023-11-25 13:07:06,144   WARNING  obico.ws - WS Closed - None - None
+2023-11-25 23:39:15,945   WARNING  obico.ws - WS Closed - None - None
+2023-11-26 00:48:17,963   WARNING  obico.ws - WS Closed - None - None
+2023-11-27 00:48:44,542   WARNING  obico.ws - WS Closed - None - None
