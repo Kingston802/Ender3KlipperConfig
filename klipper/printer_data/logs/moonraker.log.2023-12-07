@@ -1,4 +1,4 @@
--------------------- Log Start | Fri Dec  8 16:55:45 2023 --------------------
+-------------------- Log Start | Wed Dec  6 11:17:57 2023 --------------------
 data_path: /home/pi/printer_data
 is_default_data_path: False
 config_file: /home/pi/printer_data/config/moonraker.conf
@@ -199,8 +199,13 @@ Git Repo sonar: No warnings detected
 Git Repo moonraker-obico: No warnings detected
 Klipper Version: v0.11.0-309-g64a97431
 CPU Throttled Flags: ['Temperature Limit Active', 'Previously Temperature Limited']
-2023-12-09 05:55:45,340 [machine.py:_find_public_ip()] - Failed to detect local IP address
-2023-12-09 05:55:45,345 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
-2023-12-09 05:55:55,366 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
-2023-12-09 05:55:55,368 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
-2023-12-09 05:56:05,379 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-07 00:17:57,868 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-12-07 00:17:57,869 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
+2023-12-07 00:18:07,903 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-07 00:18:07,906 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
+2023-12-07 00:18:17,910 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-07 15:19:06,595 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-12-07 15:19:06,596 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
+2023-12-07 15:19:16,624 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-07 15:19:16,626 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
+2023-12-07 15:19:26,635 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193

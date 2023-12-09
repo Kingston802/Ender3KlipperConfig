@@ -1,0 +1,365 @@
+-------------------- Log Start | Thu Dec  7 12:06:32 2023 --------------------
+data_path: /home/pi/printer_data
+is_default_data_path: False
+config_file: /home/pi/printer_data/config/moonraker.conf
+startup_warnings: []
+verbose: False
+debug: False
+asyncio_debug: False
+is_backup_config: False
+is_python_package: True
+instance_uuid: 897b55d4bc094ed1a5a19ff3af697fa2
+unix_socket_path: /home/pi/printer_data/comms/moonraker.sock
+software_version: v0.8.0-190-ge03dbe3
+git_branch: master
+git_remote: origin
+git_repo_url: https://github.com/Arksine/moonraker.git
+modified_files: []
+unofficial_components: []
+log_file: /home/pi/printer_data/logs/moonraker.log
+python_version: 3.9.2 (default, Mar 12 2021, 04:06:34)  [GCC 10.2.1 20210110]
+msgspec_enabled: False
+uvloop_enabled: False
+
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+max_upload_size = 1024
+klippy_uds_address = ~/printer_data/comms/klippy.sock
+
+[file_manager]
+enable_object_processing = False
+
+[authorization]
+cors_domains = 
+	https://my.mainsail.xyz
+	http://my.mainsail.xyz
+	http://*.local
+	http://*.lan
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+
+[octoprint_compat]
+
+[history]
+
+[announcements]
+subscriptions = 
+	mainsail
+
+[update_manager]
+refresh_interval = 168
+enable_auto_refresh = True
+
+[update_manager mainsail]
+type = web
+channel = stable
+repo = mainsail-crew/mainsail
+path = ~/mainsail
+
+[update_manager mainsail-config]
+type = git_repo
+primary_branch = master
+path = ~/mainsail-config
+origin = https://github.com/mainsail-crew/mainsail-config.git
+managed_services = klipper
+
+[update_manager crowsnest]
+type = git_repo
+path = ~/crowsnest
+origin = https://github.com/mainsail-crew/crowsnest.git
+managed_services = crowsnest
+install_script = tools/pkglist.sh
+
+[update_manager sonar]
+type = git_repo
+path = ~/sonar
+origin = https://github.com/mainsail-crew/sonar.git
+primary_branch = main
+managed_services = sonar
+install_script = tools/install.sh
+
+[update_manager moonraker-obico]
+type = git_repo
+path = ~/moonraker-obico
+origin = https://github.com/TheSpaghettiDetective/moonraker-obico.git
+env = /home/pi/moonraker-obico-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	moonraker-obico
+
+#################################################################
+All Configuration Files:
+/home/pi/printer_data/config/moonraker.conf
+/home/pi/printer_data/config/moonraker-obico-update.cfg
+#################################################################
+Unsafe Shutdown Count: 29
+
+System Info:
+
+***python***
+  version: (3, 9, 2, 'final', 0)
+  version_string: 3.9.2 (default, Mar 12 2021, 04:06:34)  [GCC 10.2.1 20210110]
+
+***cpu_info***
+  cpu_count: 4
+  bits: 32bit
+  processor: armv7l
+  cpu_desc: ARMv7 Processor rev 4 (v7l)
+  serial_number: 474fc23
+  hardware_desc: BCM2835
+  model: Raspberry Pi 3 Model B Plus Rev 1.3
+  total_memory: 891312
+  memory_units: kB
+
+***sd_info***
+  manufacturer_id: 03
+  manufacturer: Sandisk
+  oem_id: 5344
+  product_name: SU32G
+  product_revision: 8.0
+  serial_number: 1f98bddb
+  manufacturer_date: 4/2013
+  capacity: 29.7 GiB
+  total_bytes: 31914983424
+
+***distribution***
+  name: Raspbian GNU/Linux 11 (bullseye)
+  id: raspbian
+  version: 11
+  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
+  like: debian
+  codename: bullseye
+  release_info: {'name': 'MainsailOS', 'version_id': '1.2.1', 'codename': 'bullseye', 'id': 'mainsailos'}
+
+***virtualization***
+  virt_type: none
+  virt_identifier: none
+
+***network***
+
+***canbus***
+
+***Allowed Services***
+  klipper_mcu
+  webcamd
+  MoonCord
+  KlipperScreen
+  moonraker-telegram-bot
+  moonraker-obico
+  sonar
+  crowsnest
+  octoeverywhere
+  ratos-configurator
+
+Systemd unit moonraker.service:
+unit_name: moonraker.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['system.slice', 'network-online.target', 'sysinit.target']
+**After=['klipper.service', 'sysinit.target', 'basic.target', 'system.slice', 'systemd-journald.socket', 'network-online.target']
+**SupplementaryGroups=['moonraker-admin']
+**EnvironmentFiles=/home/pi/printer_data/systemd/moonraker.env
+**ExecStart=/home/pi/moonraker-env/bin/python $MOONRAKER_ARGS
+**WorkingDirectory=
+**FragmentPath=/etc/systemd/system/moonraker.service
+**Description=API Server for Klipper SV1
+**User=pi
+
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['system.slice', '-.mount', 'sysinit.target']
+**After=['sysinit.target', '-.mount', 'basic.target', 'system.slice', 'systemd-journald.socket', 'network-online.target']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/pi/printer_data/systemd/klipper.env
+**ExecStart=/home/pi/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/pi/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=pi
+Git Repo moonraker: Warnings detected:
+  Repo has untracked source files: ['moonraker/components/timelapse.py']
+Git Repo klipper: No warnings detected
+Git Repo mainsail-config: No warnings detected
+Git Repo crowsnest: No warnings detected
+Git Repo sonar: No warnings detected
+Git Repo moonraker-obico: No warnings detected
+Klipper Version: v0.11.0-309-g64a97431
+CPU Throttled Flags: ['Temperature Limit Active', 'Previously Temperature Limited']
+2023-12-08 01:06:32,683 [base_deploy.py:log_info()] - PackageKit: Detected 71 package updates:
+adduser
+base-files
+bind9-host
+bind9-libs
+bluez-firmware
+cpio
+curl
+dbus
+distro-info-data
+file
+firmware-atheros
+firmware-brcm80211
+firmware-libertas
+firmware-misc-nonfree
+firmware-realtek
+libaom0
+libblas3
+libbsd-dev
+libbsd0
+libc-bin
+libc-dev-bin
+libc-devtools
+libc-l10n
+libc6
+libc6-dbg
+libc6-dev
+libcurl3-gnutls
+libcurl4
+libdbus-1-3
+libflac8
+libgssapi-krb5-2
+libgstreamer-plugins-base1.0-0
+libjson-c5
+libk5crypto3
+libkrb5-3
+libkrb5support0
+liblapack3
+libmagic-mgc
+libmagic1
+libncurses-dev
+libncurses6
+libncursesw6
+libnghttp2-14
+librsvg2-2
+librsvg2-common
+libssl-dev
+libssl1.1
+libtiff5
+libtinfo5
+libtinfo6
+libvpx6
+libwebp6
+libwebpdemux2
+libwebpmux3
+libx11-6
+libx11-data
+libx11-xcb1
+libxpm4
+locales
+logrotate
+ncurses-base
+ncurses-bin
+ncurses-term
+openssh-client
+openssh-server
+openssh-sftp-server
+openssl
+python3-libcamera
+python3-picamera2
+raspi-config
+ssh
+2023-12-08 01:06:32,734 [shell_command.py:_check_proc_success()] - Command (git -C /home/pi/sonar status --porcelain -b) successfully finished
+2023-12-08 01:06:32,780 [shell_command.py:_check_proc_success()] - Command (git -C /home/pi/sonar branch --list --no-color) successfully finished
+2023-12-08 01:06:32,829 [shell_command.py:_check_proc_success()] - Command (git -C /home/pi/sonar remote get-url origin) successfully finished
+2023-12-08 01:06:33,866 [shell_command.py:_check_proc_success()] - Command (git -C /home/pi/sonar fetch origin --prune --progress) successfully finished
+2023-12-08 01:06:33,888 [shell_command.py:_check_proc_success()] - Command (git -C /home/pi/sonar merge-base --is-ancestor HEAD origin/main) successfully finished
+2023-12-08 01:06:33,918 [shell_command.py:_check_proc_success()] - Command (git -C /home/pi/sonar rev-parse HEAD) successfully finished
+2023-12-08 01:06:33,966 [shell_command.py:_check_proc_success()] - Command (git -C /home/pi/sonar describe --always --tags --long --dirty --abbrev=8) successfully finished
+2023-12-08 01:06:33,993 [shell_command.py:_check_proc_success()] - Command (git -C /home/pi/sonar rev-parse origin/main) successfully finished
+2023-12-08 01:06:34,018 [shell_command.py:_check_proc_success()] - Command (git -C /home/pi/sonar describe origin/main --always --tags --long --abbrev=8) successfully finished
+2023-12-08 01:06:34,039 [shell_command.py:_check_proc_success()] - Command (git -C /home/pi/sonar rev-list HEAD..eacc498a52f79292063b6f9b0e0c191c34c5dc09 --count) successfully finished
+2023-12-08 01:06:34,061 [shell_command.py:_check_proc_success()] - Command (git -C /home/pi/sonar log 7962a1225ad88fa2a642ae2b378637491b4b2710..origin/main --format="sha:%H%x1Dauthor:%an%x1Ddate:%ct%x1Dsubject:%s%x1Dmessage:%b%x1E" --max-count=100) successfully finished
+2023-12-08 01:06:34,096 [shell_command.py:_check_proc_success()] - Command (git -C /home/pi/sonar for-each-ref --count=100 --sort='-creatordate' --contains=HEAD --merged=origin/main --format='%(if)%(*objecttype)%(then)%(*objecttype) %(*objectname)%(else)%(objecttype) %(objectname)%(end) %(refname)' 'refs/tags') successfully finished
+2023-12-08 01:06:34,097 [git_deploy.py:log_repo_info()] - Git Repo sonar Detected:
+Owner: mainsail-crew
+Repository Name: sonar
+Path: /home/pi/sonar
+Remote: origin
+Branch: main
+Remote URL: https://github.com/mainsail-crew/sonar.git
+Recovery URL: https://github.com/mainsail-crew/sonar.git
+Current Commit SHA: 7962a1225ad88fa2a642ae2b378637491b4b2710
+Upstream Commit SHA: eacc498a52f79292063b6f9b0e0c191c34c5dc09
+Current Version: v0.1.2-0-g7962a122
+Upstream Version: v0.1.3-1-geacc498a
+Rollback Commit: 7962a1225ad88fa2a642ae2b378637491b4b2710
+Rollback Branch: main
+Rollback Version: v0.1.2-0-g7962a12
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 3
+Diverged: False
+2023-12-08 01:06:34,098 [base_deploy.py:log_info()] - Git Repo sonar: Channel: dev
+2023-12-08 01:06:34,098 [base_deploy.py:log_info()] - Git Repo sonar: Validity check for git repo passed
+2023-12-08 01:25:06,548 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-12-08 01:25:06,550 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
+2023-12-08 01:25:16,569 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 01:25:16,571 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
+2023-12-08 01:48:58,840 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-12-08 01:48:58,842 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
+2023-12-08 01:49:08,856 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 01:49:08,862 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
+2023-12-08 01:49:18,868 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 03:23:18,180 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-12-08 03:23:18,181 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
+2023-12-08 03:23:28,209 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 03:23:28,213 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
+2023-12-08 03:23:38,229 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 05:16:59,394 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-12-08 05:16:59,395 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
+2023-12-08 05:17:09,399 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 05:17:09,401 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
+2023-12-08 05:17:19,424 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 05:45:02,217 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-12-08 05:45:02,219 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
+2023-12-08 05:45:12,235 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 05:45:12,238 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
+2023-12-08 05:45:22,254 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 06:19:45,579 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-12-08 06:19:45,581 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
+2023-12-08 06:19:55,581 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 06:19:55,584 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
+2023-12-08 06:20:05,612 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 07:19:21,480 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-12-08 07:19:21,482 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
+2023-12-08 07:19:31,506 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-12-08 07:19:41,513 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 07:19:41,519 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
+2023-12-08 07:46:24,150 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-12-08 07:46:24,151 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
+2023-12-08 07:46:34,178 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 07:46:34,181 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
+2023-12-08 07:46:44,192 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 08:30:48,564 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-12-08 08:30:48,566 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
+2023-12-08 08:30:58,579 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 08:30:58,581 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
+2023-12-08 08:49:00,285 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 08:49:10,304 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-12-08 08:49:10,306 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
+2023-12-08 08:49:20,307 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 08:49:20,309 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
+2023-12-08 14:49:15,932 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-12-08 14:49:15,933 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
+2023-12-08 14:49:25,952 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 14:49:25,954 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
+2023-12-08 14:49:35,965 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 22:46:32,977 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-12-08 22:46:32,978 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
+2023-12-08 22:46:42,998 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-08 22:46:43,000 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
+2023-12-08 22:46:53,017 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
