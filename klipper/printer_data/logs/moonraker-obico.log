@@ -35280,3 +35280,43 @@ b'http://127.0.0.1:8080/video.mp4: Server returned 404 Not Found\n'
 2023-12-09 12:21:36,447      INFO  backoff - Backing off wait_for_klippy_ready(...) for 35.9s (False)
 2023-12-09 12:22:12,412      INFO  backoff - Backing off wait_for_klippy_ready(...) for 45.0s (False)
 2023-12-09 12:22:57,421      INFO  backoff - Backing off wait_for_klippy_ready(...) for 35.7s (False)
+2023-12-09 15:20:03,248      INFO  obico.app - Fetching linked printer...
+2023-12-09 15:20:03,781      INFO  obico.app - Linked printer: {'is_pro': False, 'id': 157624, 'name': 'Ender3', 'retract_on_pause': 6.5}
+2023-12-09 15:20:04,205   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-12-09 15:20:04,207   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-12-09 15:20:04,244      INFO  backoff - Backing off ensure_api_key(...) for 0.2s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x757324c0>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-12-09 15:20:04,423   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-12-09 15:20:04,432      INFO  backoff - Backing off ensure_api_key(...) for 1.4s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75732a78>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-12-09 15:20:05,207   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-12-09 15:20:05,863   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-12-09 15:20:05,905      INFO  obico.moonraker_conn - connection is open
+2023-12-09 15:20:06,124      INFO  obico.moonraker_conn - Klippy ready
+2023-12-09 15:20:06,285      INFO  obico.janus - Starting webcam streamer
+2023-12-09 15:20:06,394      INFO  obico.app - detected state change: Offline -> Operational
+2023-12-09 15:20:06,625   WARNING  obico.app - error response from moonraker, Event(name='message', data={'jsonrpc': '2.0', 'error': {'code': 400, 'message': "{'error': 'WebRequestError', 'message': 'Invalid argument'}"}, 'id': 59798}, sender='moonrakerconn')
+2023-12-09 15:20:07,299      INFO  backoff - Backing off wait_for_janus(...) for 0.6s (ConnectionRefusedError: [Errno 111] Connection refused)
+2023-12-09 15:21:37,224      INFO  obico.app - detected state change: Operational -> Printing
+2023-12-09 15:21:37,886      INFO  obico.app - print event: PrintStarted (1702088496)
+2023-12-09 16:03:45,159      INFO  obico.app - detected state change: Printing -> Operational
+2023-12-09 16:03:45,161      INFO  obico.app - print event: PrintDone (1702088496)
+2023-12-09 16:15:29,971      INFO  obico.app - detected state change: Operational -> Printing
+2023-12-09 16:15:30,444      INFO  obico.app - print event: PrintStarted (1702091729)
+2023-12-09 16:57:16,463      INFO  obico.app - detected state change: Printing -> Operational
+2023-12-09 16:57:16,464      INFO  obico.app - print event: PrintDone (1702091729)
+2023-12-09 17:42:46,405   WARNING  obico.ws - WS Closed - None - None
+2023-12-09 18:51:57,800   WARNING  obico.ws - WS Closed - None - None
+2023-12-09 20:56:08,457   WARNING  obico.ws - WS Closed - None - None
+2023-12-09 21:28:40,265      INFO  obico.app - detected state change: Operational -> Printing
+2023-12-09 21:28:40,760      INFO  obico.app - print event: PrintStarted (1702110520)
+2023-12-09 21:32:03,830      INFO  backoff - Backing off capture_jpeg(...) for 0.5s (AttributeError: 'ServerConn' object has no attribute 'snapshot_url')
+2023-12-09 21:32:04,359      INFO  backoff - Backing off capture_jpeg(...) for 1.2s (AttributeError: 'ServerConn' object has no attribute 'snapshot_url')
+2023-12-09 21:32:05,554     ERROR  backoff - Giving up capture_jpeg(...) after 3 tries (AttributeError: 'ServerConn' object has no attribute 'snapshot_url')
+2023-12-09 21:32:05,556   WARNING  obico.server_conn - Failed to capture jpeg - 'ServerConn' object has no attribute 'snapshot_url'
+2023-12-09 21:32:06,117      INFO  obico.app - detected state change: Printing -> Operational
+2023-12-09 21:32:06,118      INFO  obico.app - print event: PrintCancelled (1702110520)
+2023-12-09 21:32:06,620      INFO  obico.app - print event: PrintFailed (1702110520)
+2023-12-09 21:44:48,883      INFO  obico.app - detected state change: Operational -> Printing
+2023-12-09 21:44:49,321      INFO  obico.app - print event: PrintStarted (1702111488)
+2023-12-09 23:03:07,782      INFO  obico.app - detected state change: Printing -> Operational
+2023-12-09 23:03:07,783      INFO  obico.app - print event: PrintDone (1702111488)
+2023-12-10 14:14:52,086      INFO  obico.app - detected state change: Operational -> Offline

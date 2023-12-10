@@ -1,4 +1,4 @@
--------------------- Log Start | Fri Dec  8 16:55:45 2023 --------------------
+-------------------- Log Start | Sat Dec  9 11:45:04 2023 --------------------
 data_path: /home/pi/printer_data
 is_default_data_path: False
 config_file: /home/pi/printer_data/config/moonraker.conf
@@ -102,7 +102,7 @@ All Configuration Files:
 /home/pi/printer_data/config/moonraker.conf
 /home/pi/printer_data/config/moonraker-obico-update.cfg
 #################################################################
-Unsafe Shutdown Count: 29
+Unsafe Shutdown Count: 30
 
 System Info:
 
@@ -166,8 +166,8 @@ unit_name: moonraker.service
 is_default: True
 manager: systemd
 Properties:
-**Requires=['system.slice', 'network-online.target', 'sysinit.target']
-**After=['klipper.service', 'sysinit.target', 'basic.target', 'system.slice', 'systemd-journald.socket', 'network-online.target']
+**Requires=['system.slice', 'sysinit.target', 'network-online.target']
+**After=['systemd-journald.socket', 'sysinit.target', 'klipper.service', 'basic.target', 'network-online.target', 'system.slice']
 **SupplementaryGroups=['moonraker-admin']
 **EnvironmentFiles=/home/pi/printer_data/systemd/moonraker.env
 **ExecStart=/home/pi/moonraker-env/bin/python $MOONRAKER_ARGS
@@ -181,8 +181,8 @@ unit_name: klipper.service
 is_default: True
 manager: systemd
 Properties:
-**Requires=['system.slice', '-.mount', 'sysinit.target']
-**After=['sysinit.target', '-.mount', 'basic.target', 'system.slice', 'systemd-journald.socket', 'network-online.target']
+**Requires=['-.mount', 'sysinit.target', 'system.slice']
+**After=['systemd-journald.socket', 'sysinit.target', 'basic.target', 'network-online.target', 'system.slice', '-.mount']
 **SupplementaryGroups=[]
 **EnvironmentFiles=/home/pi/printer_data/systemd/klipper.env
 **ExecStart=/home/pi/klippy-env/bin/python $KLIPPER_ARGS
@@ -199,8 +199,39 @@ Git Repo sonar: No warnings detected
 Git Repo moonraker-obico: No warnings detected
 Klipper Version: v0.11.0-309-g64a97431
 CPU Throttled Flags: ['Temperature Limit Active', 'Previously Temperature Limited']
-2023-12-09 05:55:45,340 [machine.py:_find_public_ip()] - Failed to detect local IP address
-2023-12-09 05:55:45,345 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
-2023-12-09 05:55:55,366 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
-2023-12-09 05:55:55,368 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.193
-2023-12-09 05:56:05,379 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.193
+2023-12-10 00:45:04,015 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.1.155
+2023-12-10 14:14:52,081 [klippy_connection.py:_process_status_update()] - Klippy has shutdown
+2023-12-10 14:14:52,092 [proc_stats.py:_handle_shutdown()] - 
+Moonraker System Usage Statistics:
+System Time: 1702170862.486139, Usage: 1.71%, Memory: 27800 kB
+System Time: 1702170863.489567, Usage: 1.72%, Memory: 27800 kB
+System Time: 1702170864.490204, Usage: 2.01%, Memory: 27800 kB
+System Time: 1702170865.498025, Usage: 1.77%, Memory: 27800 kB
+System Time: 1702170866.492499, Usage: 2.26%, Memory: 27800 kB
+System Time: 1702170867.496274, Usage: 1.72%, Memory: 27800 kB
+System Time: 1702170868.495734, Usage: 1.93%, Memory: 27800 kB
+System Time: 1702170869.496472, Usage: 1.76%, Memory: 27800 kB
+System Time: 1702170870.497832, Usage: 1.75%, Memory: 27800 kB
+System Time: 1702170871.498884, Usage: 3.18%, Memory: 27800 kB
+System Time: 1702170872.498995, Usage: 1.7%, Memory: 27800 kB
+System Time: 1702170873.500828, Usage: 1.68%, Memory: 27800 kB
+System Time: 1702170874.504937, Usage: 1.58%, Memory: 27800 kB
+System Time: 1702170875.505582, Usage: 1.86%, Memory: 27800 kB
+System Time: 1702170876.504007, Usage: 2.35%, Memory: 27800 kB
+System Time: 1702170877.505084, Usage: 1.63%, Memory: 27800 kB
+System Time: 1702170878.508027, Usage: 1.62%, Memory: 27800 kB
+System Time: 1702170879.508693, Usage: 1.85%, Memory: 27800 kB
+System Time: 1702170880.509879, Usage: 1.63%, Memory: 27800 kB
+System Time: 1702170881.513908, Usage: 3.07%, Memory: 27800 kB
+System Time: 1702170882.511912, Usage: 1.98%, Memory: 27800 kB
+System Time: 1702170883.514746, Usage: 1.79%, Memory: 27800 kB
+System Time: 1702170884.516598, Usage: 1.68%, Memory: 27800 kB
+System Time: 1702170885.519937, Usage: 1.79%, Memory: 27800 kB
+System Time: 1702170886.518906, Usage: 2.68%, Memory: 27800 kB
+System Time: 1702170887.519864, Usage: 2.08%, Memory: 27800 kB
+System Time: 1702170888.520834, Usage: 1.59%, Memory: 27800 kB
+System Time: 1702170889.522726, Usage: 2.02%, Memory: 27800 kB
+System Time: 1702170890.522845, Usage: 1.77%, Memory: 27800 kB
+System Time: 1702170891.525598, Usage: 3.08%, Memory: 27800 kB
+CPU Temperature: 68.756
+2023-12-10 14:14:52,094 [proc_stats.py:_handle_shutdown()] - Throttled Flags: Temperature Limit Active Previously Temperature Limited
