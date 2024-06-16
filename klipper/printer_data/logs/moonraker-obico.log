@@ -35320,3 +35320,51 @@ b'http://127.0.0.1:8080/video.mp4: Server returned 404 Not Found\n'
 2023-12-09 23:03:07,782      INFO  obico.app - detected state change: Printing -> Operational
 2023-12-09 23:03:07,783      INFO  obico.app - print event: PrintDone (1702111488)
 2023-12-10 14:14:52,086      INFO  obico.app - detected state change: Operational -> Offline
+2023-12-10 17:31:29,269      INFO  obico.app - Fetching linked printer...
+2023-12-10 17:31:29,719      INFO  obico.app - Linked printer: {'is_pro': False, 'id': 157624, 'name': 'Ender3', 'retract_on_pause': 6.5}
+2023-12-10 17:31:30,169   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-12-10 17:31:30,170   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-12-10 17:31:30,229      INFO  backoff - Backing off ensure_api_key(...) for 1.0s (requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=7125): Max retries exceeded with url: /access/api_key (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x73dbf4c0>: Failed to establish a new connection: [Errno 111] Connection refused')))
+2023-12-10 17:31:31,177   WARNING  obico.app - Connections not ready. Trying again in 1s...
+2023-12-10 17:31:31,224   WARNING  obico.moonraker_conn - api key is unset, trying to fetch one
+2023-12-10 17:31:31,286      INFO  obico.moonraker_conn - connection is open
+2023-12-10 17:31:31,317      INFO  backoff - Backing off wait_for_klippy_ready(...) for 0.4s (False)
+2023-12-10 17:31:31,736      INFO  backoff - Backing off wait_for_klippy_ready(...) for 0.3s (False)
+2023-12-10 17:31:32,100      INFO  backoff - Backing off wait_for_klippy_ready(...) for 1.0s (False)
+2023-12-10 17:31:32,272      INFO  obico.janus - Starting webcam streamer
+2023-12-10 17:31:33,295      INFO  backoff - Backing off wait_for_janus(...) for 0.4s (ConnectionRefusedError: [Errno 111] Connection refused)
+2023-12-10 17:31:33,420      INFO  obico.moonraker_conn - Klippy ready
+2023-12-10 17:31:33,451   WARNING  obico.app - error response from moonraker, Event(name='message', data={'jsonrpc': '2.0', 'error': {'code': 400, 'message': "{'error': 'WebRequestError', 'message': 'Invalid argument'}"}, 'id': 12080}, sender='moonrakerconn')
+2023-12-10 17:31:33,674      INFO  obico.app - detected state change: Offline -> Operational
+2023-12-10 17:43:29,317      INFO  obico.app - detected state change: Operational -> Printing
+2023-12-10 17:43:29,959      INFO  obico.app - print event: PrintStarted (1702183409)
+2023-12-10 21:50:35,174      INFO  obico.app - detected state change: Printing -> Operational
+2023-12-10 21:50:35,176      INFO  obico.app - print event: PrintDone (1702183409)
+2023-12-10 22:58:42,739      INFO  obico.app - detected state change: Operational -> Printing
+2023-12-10 22:58:43,296      INFO  obico.app - print event: PrintStarted (1702202322)
+2023-12-10 23:11:47,471      INFO  obico.app - detected state change: Printing -> Operational
+2023-12-10 23:11:47,472      INFO  obico.app - print event: PrintCancelled (1702202322)
+2023-12-10 23:11:47,975      INFO  obico.app - print event: PrintFailed (1702202322)
+2023-12-10 23:13:42,355      INFO  obico.app - detected state change: Operational -> Printing
+2023-12-10 23:13:42,793      INFO  obico.app - print event: PrintStarted (1702203222)
+2023-12-10 23:21:38,122      INFO  obico.app - detected state change: Printing -> Operational
+2023-12-10 23:21:38,125      INFO  obico.app - print event: PrintCancelled (1702203222)
+2023-12-10 23:21:38,629      INFO  obico.app - print event: PrintFailed (1702203222)
+2023-12-10 23:22:55,642      INFO  obico.app - detected state change: Operational -> Printing
+2023-12-10 23:22:56,131      INFO  obico.app - print event: PrintStarted (1702203775)
+2023-12-11 03:31:56,331      INFO  obico.app - detected state change: Printing -> Operational
+2023-12-11 03:31:56,333      INFO  obico.app - print event: PrintDone (1702203775)
+2023-12-11 08:08:57,932      INFO  obico.app - detected state change: Operational -> Offline
+2023-12-11 17:31:30,740   WARNING  obico.ws - WS Closed - None - None
+2023-12-12 17:32:00,674   WARNING  obico.ws - WS Closed - None - None
+2023-12-13 05:20:16,212   WARNING  obico.ws - WS Closed - None - None
+2023-12-14 04:58:46,105   WARNING  obico.ws - WS Closed - None - None
+2023-12-14 05:32:39,498   WARNING  obico.ws - WS Closed - None - None
+2023-12-14 09:01:11,106   WARNING  obico.ws - WS Closed - None - None
+2023-12-14 09:59:19,257   WARNING  obico.ws - WS Closed - None - None
+2023-12-14 10:01:47,459   WARNING  obico.server_conn - Not connected to websocket server after 120s
+2023-12-14 10:01:47,460     ERROR  obico.utils - Attempt 1 - backing off 0.214170 seconds: Not connected to websocket server after 120s
+2023-12-14 10:01:58,417   WARNING  obico.ws - WS Closed - None - None
+2023-12-14 11:11:14,103   WARNING  obico.ws - WS Closed - None - None
+2023-12-15 11:11:28,024   WARNING  obico.ws - WS Closed - None - None
+                    
